@@ -84,14 +84,14 @@ public class Renderer extends JPanel {
 		for(int w = 0; w < missles.size(); w++){
 			Chicken m = (Chicken)missles.get(w);
 			if((w+1)%11 == 0)
-				g2.drawImage(creeper, m.missleX-3, m.missleY-3, observer);
+				g2.drawImage(creeper, m.chickenX-3, m.chickenY-3, observer);
 			else
-				g2.drawImage(chicken, m.missleX-3, m.missleY-3, observer);
+				g2.drawImage(chicken, m.chickenX-3, m.chickenY-3, observer);
 		}
 		for(int w = 0; w < duds.size(); w++){
 			Bomb m = (Bomb)duds.get(w);
 			
-			g2.drawImage(bomb, m.dudX-5, m.dudY-3, observer);
+			g2.drawImage(bomb, m.bombX-5, m.bombY-3, observer);
 		}
 		//******************************************************************
 	}

@@ -20,8 +20,8 @@ public class Game implements ActionListener, KeyListener {
 	static Player toon = new Player();
 	
 	//Structures************************************************************
-	static ArrayList<Chicken> missles = new ArrayList<Chicken>();
-	static ArrayList<Bomb> duds = new ArrayList<Bomb>();
+	static ArrayList<Chicken> chickens = new ArrayList<Chicken>();
+	static ArrayList<Bomb> bombs = new ArrayList<Bomb>();
 	
 	//Variables*************************************************************
 	boolean up = false;
@@ -88,14 +88,14 @@ public class Game implements ActionListener, KeyListener {
 			direction = 4;
 		}
 		
-		ArrayList missles = Game.getList();
+		ArrayList<Chicken> missles = Game.getList();
 		for(int w = 0; w < missles.size(); w++){
 			Chicken m = (Chicken)missles.get(w);
 			m.move();
 			if(m.checkCollision(toon.getXLocation(), toon.getYLocation()))
 				lost = true;
 		}
-		ArrayList duds = Game.getDuds();
+		ArrayList<Bomb> duds = Game.getDuds();
 		for(int w = 0; w < duds.size(); w++){
 			Bomb m = (Bomb)duds.get(w);
 			if(m.checkCollision(toon.getXLocation(), toon.getYLocation()))
@@ -113,25 +113,25 @@ public class Game implements ActionListener, KeyListener {
 
 		if(rotation%3 != 0){
 			Chicken miss = new Chicken(rand.nextInt(340) + 20,rand.nextInt(235) + 20);
-			missles.add(miss);
+			chickens.add(miss);
 		}
 		else{
 			Bomb du = new Bomb(rand.nextInt(340) + 20,rand.nextInt(235) + 20);
-			duds.add(du);
+			bombs.add(du);
 		}
 		if(!lost)
 			toon.incrementScore();
 		rotation++;
 	}
 	public void deleteEnemies(){
-		missles.clear();
-		duds.clear();
+		chickens.clear();
+		bombs.clear();
 	}
-	public static ArrayList getList(){
-		return missles;
+	public static ArrayList<Chicken> getList(){
+		return chickens;
 	}
-	public static ArrayList getDuds(){
-		return duds;
+	public static ArrayList<Bomb> getDuds(){
+		return bombs;
 	}
 	@Override
 	public void keyPressed(KeyEvent e) {

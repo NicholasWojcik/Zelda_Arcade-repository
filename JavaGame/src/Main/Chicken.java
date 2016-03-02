@@ -4,30 +4,43 @@ public class Chicken {
 	
 	//Variables**********************************************
 	boolean visible = false;
-	public int missleX = 0;
-	public int missleY = 0;
+	public int chickenX = 0;
+	public int chickenY = 0;
 	
 	//Constructor********************************************
 	public Chicken(int x, int y){
-		missleX = x;
-		missleY = y;
+		chickenX = x;
+		chickenY = y;
 		visible = true;
-		
+	}
+	
+	//Getters and setters************************************
+	public int getX(){
+		return chickenX;
+	}
+	public int getY(){
+		return chickenY;
+	}
+	public void setX(int x){
+		chickenX = x;
+	}
+	public void setY(int y){
+		chickenY = y;
 	}
 	
 	//Methods************************************************
 	public void move(){
-		if(missleX < Game.toon.getXLocation())
-			missleX++;
+		if(chickenX < Game.toon.getXLocation())
+			chickenX++;
 		else
-			missleX--;
-		if(missleY < Game.toon.getYLocation())
-			missleY++;
+			chickenX--;
+		if(chickenY < Game.toon.getYLocation())
+			chickenY++;
 		else 
-			missleY--;
+			chickenY--;
 	}
 	public boolean checkCollision(int x, int y){
-		if(missleX > (x-7) && missleX < (x+7) &&  missleY > (y-7) && missleY < (y+7))
+		if(chickenX > (x-7) && chickenX < (x+7) &&  chickenY > (y-7) && chickenY < (y+7))
 			return true;
 		else
 			return false;
