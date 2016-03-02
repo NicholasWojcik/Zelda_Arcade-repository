@@ -14,7 +14,7 @@ import javax.swing.Timer;
 public class Game implements ActionListener, KeyListener {
 	
 	//Objects***************************************************************
-	public static Game game;
+	static Game game;
 	public Renderer painter;
 	Random rand = new Random();
 	static Player toon = new Player();
@@ -24,11 +24,11 @@ public class Game implements ActionListener, KeyListener {
 	static ArrayList<Bomb> bombs = new ArrayList<Bomb>();
 	
 	//Variables*************************************************************
-	boolean up = false;
-	boolean down = false;
-	boolean left = false;
-	boolean right = false;
-	boolean missle = false;
+	private boolean up = false;
+	private boolean down = false;
+	private boolean left = false;
+	private boolean right = false;
+	private boolean missle = false;
 	static int rotation = 0;
 	static boolean lost = false;
 	static int direction = 1;

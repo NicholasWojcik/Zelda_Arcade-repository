@@ -3,10 +3,10 @@ package Main;
 public class GameOver {
 	
 	//Variables********************************************
-	public int gx = 90;
-	public int gy = -100;
-	public int tombX = 200;
-	public int tombY = 200;
+	private int gx = 90;
+	private int gy = -100;
+	private int tombX = 200;
+	private int tombY = 200;
 	
 	//Getters & Setters************************************
 	public int getX(){

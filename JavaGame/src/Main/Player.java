@@ -13,31 +13,29 @@ import javax.imageio.ImageIO;
 public class Player {
 	
 	//Variables**************************************************
-	public int health = 5;
-	public int level = 1;
-	public static int score = 0;
-	public int xLoc = 60;
-	public int yLoc = 60;
+	private static int score = 0;
+	private int xLoc = 60;
+	private int yLoc = 60;
 	
 	//Image Variables********************************************
-	BufferedImage sprite = null;
-	BufferedImage gameOver = null;
-	BufferedImage ghost = null;
-	BufferedImage tomb = null;
-	ImageObserver observer;
+	private BufferedImage sprite = null;
+	private BufferedImage gameOver = null;
+	private BufferedImage ghost = null;
+	private BufferedImage tomb = null;
+	private ImageObserver observer;
 	
 	//Objects****************************************************
-	GameOver go = new GameOver();
+	private GameOver go = new GameOver();
 
 	//Constructor************************************************
-	Player(){
+	public Player(){
 	}
 
 	//Getters & Setters******************************************
-	int getXLocation(){
+	public int getXLocation(){
 		return xLoc;
 	}
-	int getYLocation(){
+	public int getYLocation(){
 		return yLoc;
 	}
 	public static String getScore(){
@@ -46,7 +44,7 @@ public class Player {
 	public void incrementScore(){
 		score++;
 	}
-	void changeLocation(int direction){
+	public void changeLocation(int direction){
 		if(direction == 1 && yLoc > 14)
 			yLoc = yLoc - 3;
 		if(direction == 2 && xLoc > 15)
@@ -57,7 +55,6 @@ public class Player {
 			xLoc = xLoc + 3;
 	}
 	
-	//Methods****************************************************
 	//Methods****************************************************
 	public void render(Graphics g) throws URISyntaxException{
 		Graphics2D g2 = (Graphics2D) g;

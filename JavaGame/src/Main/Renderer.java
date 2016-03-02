@@ -21,11 +21,11 @@ public class Renderer extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
 	//Image Variables*****************************************
-	BufferedImage bomb = null;
-	BufferedImage chicken = null;
-	BufferedImage deku = null;
-	BufferedImage creeper = null;
-	ImageObserver observer;
+	private BufferedImage bomb = null;
+	private BufferedImage chicken = null;
+	private BufferedImage deku = null;
+	private BufferedImage creeper = null;
+	private ImageObserver observer;
 	
 	//Constructor*********************************************
 	public Renderer(){
