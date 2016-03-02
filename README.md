@@ -8,3 +8,7 @@ project was getting the enemies to move towards the player while staying in boun
 ## To-do
 > The project is complete on the outside.  However, the code needs much more organization.  As I learn more 
 I plan on organizing the images and packages within this project.
+
+## Screenshots
+![alt tag](https://github.com/NicholasWojcik/Zelda_Arcade-repository/blob/master/ZAscreenone.png?raw=true)
+![alt tag](https://github.com/NicholasWojcik/Zelda_Arcade-repository/blob/master/ZAscreenwto.png?raw=true)
