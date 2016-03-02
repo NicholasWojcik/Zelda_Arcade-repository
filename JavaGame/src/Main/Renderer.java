@@ -41,8 +41,8 @@ public class Renderer extends JPanel {
 		super.paintComponent(g);
 		
 		//Structures*******************************************************
-		ArrayList duds = Game.getDuds();
-		ArrayList missles = Game.getList();
+		ArrayList<Bomb> bombs = Game.getDuds();
+		ArrayList<Chicken> chickens = Game.getList();
 		//*****************************************************************
 		try {
 			bomb = ImageIO.read(new File(getClass().getResource("bomb.png").toURI()));
@@ -81,17 +81,17 @@ public class Renderer extends JPanel {
 
 		
 		//Extracts enemy objects and paints them to the screen**************
-		for(int w = 0; w < missles.size(); w++){
-			Chicken m = (Chicken)missles.get(w);
+		for(int w = 0; w < chickens.size(); w++){
+			Chicken m = (Chicken)chickens.get(w);
 			if((w+1)%11 == 0)
-				g2.drawImage(creeper, m.chickenX-3, m.chickenY-3, observer);
+				g2.drawImage(creeper, m.getX()-3, m.getY()-3, observer);
 			else
-				g2.drawImage(chicken, m.chickenX-3, m.chickenY-3, observer);
+				g2.drawImage(chicken, m.getX()-3, m.getY()-3, observer);
 		}
-		for(int w = 0; w < duds.size(); w++){
-			Bomb m = (Bomb)duds.get(w);
+		for(int w = 0; w < bombs.size(); w++){
+			Bomb m = (Bomb)bombs.get(w);
 			
-			g2.drawImage(bomb, m.bombX-5, m.bombY-3, observer);
+			g2.drawImage(bomb, m.getX()-5, m.getY()-3, observer);
 		}
 		//******************************************************************
 	}

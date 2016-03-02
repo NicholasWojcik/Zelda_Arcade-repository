@@ -4,8 +4,8 @@ public class Chicken {
 	
 	//Variables**********************************************
 	boolean visible = false;
-	public int chickenX = 0;
-	public int chickenY = 0;
+	private int chickenX = 0;
+	private int chickenY = 0;
 	
 	//Constructor********************************************
 	public Chicken(int x, int y){

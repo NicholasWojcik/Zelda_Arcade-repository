@@ -3,8 +3,8 @@ package Main;
 public class Bomb {
 	
 	//Variables******************************************
-	public int bombX = 0;
-	public int bombY = 0;
+	private int bombX = 0;
+	private int bombY = 0;
 	
 	//Constructor****************************************
 	public Bomb(int x, int y){
