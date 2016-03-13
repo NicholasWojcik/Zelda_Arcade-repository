@@ -13,6 +13,10 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
+import Models.Bomb;
+import Models.Chicken;
+import Models.Player;
+
 public class Renderer extends JPanel {
 
 	/**

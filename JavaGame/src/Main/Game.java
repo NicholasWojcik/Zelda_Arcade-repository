@@ -11,13 +11,17 @@ import java.util.Random;
 import javax.swing.JFrame;
 import javax.swing.Timer;
 
+import Models.Bomb;
+import Models.Chicken;
+import Models.Player;
+
 public class Game implements ActionListener, KeyListener {
 	
 	//Objects***************************************************************
 	static Game game;
 	public Renderer painter;
 	Random rand = new Random();
-	static Player toon = new Player();
+	public static Player toon = new Player();
 	
 	//Structures************************************************************
 	static ArrayList<Chicken> chickens = new ArrayList<Chicken>();
@@ -56,6 +60,18 @@ public class Game implements ActionListener, KeyListener {
 	}
 	
 	//Methods***************************************************************
+	public static boolean getStatus(){
+		return lost;
+	}
+	public static void setStatus(boolean b){
+		Game.lost = b;
+	}
+	public static int getDirection(){
+		return direction;
+	}
+	public static void setDirection(int i){
+		Game.direction = i;
+	}
 	public void render(Graphics g){	
 		if(lost){
 			toon.renderLost(g);

@@ -1,4 +1,4 @@
-package Main;
+package Models;
 
 public class Bomb {
 	

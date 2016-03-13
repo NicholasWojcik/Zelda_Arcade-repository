@@ -1,4 +1,4 @@
-package Main;
+package Models;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -9,6 +9,9 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 
 import javax.imageio.ImageIO;
+
+import Main.Game;
+import Main.GameOver;
 
 public class Player {
 	
@@ -61,28 +64,28 @@ public class Player {
 		//BasicStroke bs1 = new BasicStroke(12, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND);
 		//g2.setStroke(bs1);
 		//g2.drawLine(this.getXLoc(), this.getYLoc(), this.getXLoc(), this.getYLoc());
-		if(Game.direction == 1){
+		if(Game.getDirection() == 1){
 			try {
 				sprite = ImageIO.read(new File(getClass().getResource("/Images/linkleft.png").toURI()));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-		else if(Game.direction == 3){
+		else if(Game.getDirection() == 3){
 			try {
 				sprite = ImageIO.read(new File(getClass().getResource("/Images/linkright.png").toURI()));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-		else if(Game.direction == 4){
+		else if(Game.getDirection() == 4){
 			try {
 				sprite = ImageIO.read(new File(getClass().getResource("/Images/linkdown.png").toURI()));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-		else if(Game.direction == 2){
+		else if(Game.getDirection() == 2){
 			try {
 				sprite = ImageIO.read(new File(getClass().getResource("/Images/linkup.png").toURI()));
 			} catch (IOException e) {
@@ -114,7 +117,7 @@ public class Player {
 		if(this.getXLocation() > 200 && this.getYLocation() > 200 && this.getYLocation() < 220 && this.getXLocation() < 220){
 			this.score = 0;
 			go.resetBanner();
-			Game.lost = false;
+			Game.setStatus(false);
 		}
 		go.move();
 	}

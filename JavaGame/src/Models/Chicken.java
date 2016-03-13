@@ -1,4 +1,6 @@
-package Main;
+package Models;
+
+import Main.Game;
 
 public class Chicken {
 	
