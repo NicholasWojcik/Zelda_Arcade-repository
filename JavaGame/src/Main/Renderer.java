@@ -23,14 +23,14 @@ public class Renderer extends JPanel {
 	//Image Variables*****************************************
 	private BufferedImage bomb = null;
 	private BufferedImage chicken = null;
-	private BufferedImage deku = null;
+	private BufferedImage splash = null;
 	private BufferedImage creeper = null;
 	private ImageObserver observer;
 	
 	//Constructor*********************************************
 	public Renderer(){
 		try {
-			deku = ImageIO.read(new File(getClass().getResource("splash4.png").toURI()));
+			splash = ImageIO.read(new File(getClass().getResource("/Images/splash.png").toURI()));
 		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}
@@ -45,22 +45,22 @@ public class Renderer extends JPanel {
 		ArrayList<Chicken> chickens = Game.getList();
 		//*****************************************************************
 		try {
-			bomb = ImageIO.read(new File(getClass().getResource("bomb.png").toURI()));
+			bomb = ImageIO.read(new File(getClass().getResource("/Images/bomb.png").toURI()));
 		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}
 		try {
-			chicken = ImageIO.read(new File(getClass().getResource("chicken.gif").toURI()));
+			chicken = ImageIO.read(new File(getClass().getResource("/Images/chicken.gif").toURI()));
 		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}
 		try {
-			creeper = ImageIO.read(new File(getClass().getResource("creeper.png").toURI()));
+			creeper = ImageIO.read(new File(getClass().getResource("/Images/creeper.png").toURI()));
 		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}
 		Graphics2D g2 = (Graphics2D) g;
-		g2.drawImage(deku, -6, -5, observer);
+		g2.drawImage(splash, -6, -5, observer);
 		Game.game.render(g);
 
 		

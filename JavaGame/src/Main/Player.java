@@ -63,28 +63,28 @@ public class Player {
 		//g2.drawLine(this.getXLoc(), this.getYLoc(), this.getXLoc(), this.getYLoc());
 		if(Game.direction == 1){
 			try {
-				sprite = ImageIO.read(new File(getClass().getResource("linkleft.png").toURI()));
+				sprite = ImageIO.read(new File(getClass().getResource("/Images/linkleft.png").toURI()));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
 		else if(Game.direction == 3){
 			try {
-				sprite = ImageIO.read(new File(getClass().getResource("linkright.png").toURI()));
+				sprite = ImageIO.read(new File(getClass().getResource("/Images/linkright.png").toURI()));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
 		else if(Game.direction == 4){
 			try {
-				sprite = ImageIO.read(new File(getClass().getResource("linkdown.png").toURI()));
+				sprite = ImageIO.read(new File(getClass().getResource("/Images/linkdown.png").toURI()));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
 		else if(Game.direction == 2){
 			try {
-				sprite = ImageIO.read(new File(getClass().getResource("linkup.png").toURI()));
+				sprite = ImageIO.read(new File(getClass().getResource("/Images/linkup.png").toURI()));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -94,17 +94,17 @@ public class Player {
 	public void renderLost(Graphics g){
 		Graphics2D g2 = (Graphics2D) g;
 		try {
-			gameOver = ImageIO.read(new File(getClass().getResource("gameover.png").toURI()));
+			gameOver = ImageIO.read(new File(getClass().getResource("/Images/gameover.png").toURI()));
 		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}
 		try {
-			ghost = ImageIO.read(new File(getClass().getResource("ghost.png").toURI()));
+			ghost = ImageIO.read(new File(getClass().getResource("/Images/ghost.png").toURI()));
 		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}
 		try {
-			tomb = ImageIO.read(new File(getClass().getResource("tomb.png").toURI()));
+			tomb = ImageIO.read(new File(getClass().getResource("/Images/tomb.png").toURI()));
 		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}
