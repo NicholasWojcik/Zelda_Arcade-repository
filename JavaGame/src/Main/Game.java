@@ -37,9 +37,9 @@ public class Game implements ActionListener, KeyListener {
 	static boolean lost = false;
 	static int direction = 1;
 	
-	//Main Function*********************************************************
+	//Main Method***********************************************************
 	public static void main(String[] args) {
-		game = new Game();
+		 game = new Game();
 	}
 	
 	//Constructor***********************************************************
