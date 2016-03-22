@@ -10,8 +10,11 @@ import javax.swing.Timer;
 import Controller.GameController;
 
 public class GameView extends JFrame implements ActionListener {
+	
+	//Objects******************************************************************
 	private Timer timer;
 	
+	//Constructor**************************************************************
 	public GameView(){
 		timer = new Timer(20, this);
 		
@@ -22,6 +25,7 @@ public class GameView extends JFrame implements ActionListener {
 		this.setResizable(false);
 	}
 
+	//Timer Loop***************************************************************
 	public void actionPerformed(ActionEvent e) {
 		
 	}

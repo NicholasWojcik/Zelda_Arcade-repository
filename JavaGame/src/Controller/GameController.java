@@ -6,18 +6,21 @@ import Models.Player;
 import View.GameView;
 
 public class GameController {
-	//Models
+	
+	//Models*****************************************************************
 	private Bomb bomb;
 	private Chicken chicken;
 	private Player player;
 	
-	//View
+	//View*******************************************************************
 	GameView view;
 	
-	//Constructor
+	//Constructor************************************************************
 	GameController(GameView view){
 		this.view = view;
 	}
+	
+	//
 	public void update(GameView view){
 		this.view = view;
 	}

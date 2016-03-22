@@ -19,8 +19,8 @@ public class Game implements ActionListener, KeyListener {
 	
 	//Objects***************************************************************
 	static Game game;
-	public Renderer painter;
-	Random rand = new Random();
+	private Renderer painter;
+	private Random rand = new Random();
 	public static Player toon = new Player();
 	
 	//Structures************************************************************
@@ -32,7 +32,6 @@ public class Game implements ActionListener, KeyListener {
 	private boolean down = false;
 	private boolean left = false;
 	private boolean right = false;
-	private boolean missle = false;
 	static int rotation = 0;
 	static boolean lost = false;
 	static int direction = 1;
@@ -120,13 +119,7 @@ public class Game implements ActionListener, KeyListener {
 		System.out.println(Integer.toString(toon.getYLocation())+ " " + Integer.toString(toon.getXLocation()));
 		System.out.println(Boolean.toString(right));
 	}
-	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		update();
-		painter.repaint();
-	}
 	public void newEnemy(){
-
 		if(rotation%3 != 0){
 			Chicken miss = new Chicken(rand.nextInt(340) + 20,rand.nextInt(235) + 20);
 			chickens.add(miss);
@@ -149,6 +142,8 @@ public class Game implements ActionListener, KeyListener {
 	public static ArrayList<Bomb> getDuds(){
 		return bombs;
 	}
+	
+	//Events****************************************************************
 	@Override
 	public void keyPressed(KeyEvent e) {
 		int id = e.getKeyCode();
@@ -179,5 +174,11 @@ public class Game implements ActionListener, KeyListener {
 	public void keyTyped(KeyEvent e) {
 		
 	}
-
+	
+	//Timer Loop************************************************************
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		update();
+		painter.repaint();
+	}
 }
